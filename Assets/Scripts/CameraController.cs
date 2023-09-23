@@ -37,16 +37,6 @@ namespace Scene
 			CinemachineVirtualValues();
 		}
 
-		private void Start()
-		{
-			//boundValuesSet();
-		}
-
-		private void Update()
-		{
-			//keepingPlayerInBounds();
-		}
-
 		//Pastes values asigned in script to it's respective parameters in CinemachineVirtualCamera and main Camera.
 		public void CinemachineVirtualValues()
 		{
@@ -124,22 +114,22 @@ namespace Scene
 			}
 		}
 
-		//Sets camera bounds.
-		private void boundValuesSet()
-		{
-			objectWidth = playerTransform.GetComponent<BoxCollider2D>().bounds.size.x / 2;
-			objectHeight = playerTransform.GetComponent<BoxCollider2D>().bounds.size.y / 2;
-		}
+		////Sets camera bounds.
+		//private void boundValuesSet()
+		//{
+		//	objectWidth = playerTransform.GetComponent<SpriteRenderer>().bounds.size.x / 2;
+		//	objectHeight = playerTransform.GetComponent<SpriteRenderer>().bounds.size.y / 2;
+		//}
 
-		//Keeps player within camera bounds.
-		private void keepingPlayerInBounds()
-		{
-			screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
-			Vector3 viewPos = playerTransform.position;
-			viewPos.x = Mathf.Clamp(viewPos.x, screenBounds.x * -1 - objectWidth, screenBounds.x + objectWidth);
-			viewPos.y = Mathf.Clamp(viewPos.y, screenBounds.y * -1 - objectHeight, screenBounds.y + objectHeight);
-			playerTransform.position = viewPos;
-		}
+		////Keeps player within camera bounds.
+		//private void keepingPlayerInBounds()
+		//{
+		//	screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
+		//	Vector3 viewPos = playerTransform.position;
+		//	viewPos.x = Mathf.Clamp(viewPos.x, screenBounds.x * -1 - objectWidth, screenBounds.x + objectWidth);
+		//	viewPos.y = Mathf.Clamp(viewPos.y, screenBounds.y * -1 - objectHeight, screenBounds.y + objectHeight);
+		//	playerTransform.position = viewPos;
+		//}
 	}
 }
 
